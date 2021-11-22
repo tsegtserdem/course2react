@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import "bootstrap/dist/css/bootstrap.min.css"
 
-class Dishy extends Component {
-    constructor(props) {
-        super(props);
+class Dishdetail extends Component {  
+    render() {
+        const {dish} = this.props;
+       return (
+            <div  className="row">
+                {this.renderDish(dish)}
+              </div>
+        ); 
+        }
         
-        this.state = {
-            selectedDish: null
-        }   
-        console.log('Dishy Component constructor is invoked');
-    }
-    
-    componentDidMount(){
-        console.log('Dishy Component constructorDidMount is invoked');
-    }
-    onDishSelect(dish) {
-        this.setState({ selectedDish: dish});
-    }
-    
-    renderDish(dish) {
+    renderDish=(dish)=> 
+    {
         if (dish != null)
             return(
+                <div className="col-12 col-md-5 m-1">
                 <Card>
                     <CardImg top src={dish.image} alt={dish.name} />
                     <CardBody>
@@ -28,6 +24,11 @@ class Dishy extends Component {
                       <CardText>{dish.description}</CardText>
                     </CardBody>
                 </Card>
+                </div>
+//                <div className="col-12 col-md-5 m-1">
+//                <h4>Comments</h4>
+//                {this.renderComments(dish.comments)}
+//                </div>
             );
         else
             return(
@@ -35,20 +36,48 @@ class Dishy extends Component {
             );
     }
     
-    render() {
-            return (
-            <div className="container">
-                <div className="row">
-                  <div  className="col-12 col-md-5 m-1">
-                    {this.renderDish(this.state.selectedDish)}
-                  </div>
-                </div>
-            </div>
-        );
-
-        console.log('Menu Component render is invoked');
+//    console.log('Dishy Component render is invoked');
         
-        }
+//    renderComments =(comments) =>
+//    {
+//
+//        if (comments!=null)
+//        {
+//            const com = comments.map(co=>{
+//
+//                    return(
+//                    <React.Fragment>
+//                    <li>{co.comment}</li><br />
+//                    <li>-- {co.author}, {this.formatDate(co.date)}</li><br />
+//                    </React.Fragment>
+//                )
+//
+//                }
+//                );
+//            return(
+//                <ul className="list-unstyled">
+//                {com}
+//                </ul>
+//            )
+//        }
+//        else{
+//            return(<div></div>)
+//        }
+//    }
+//
+//        return (
+//            <div className="container">
+//                <div className="row">
+//                    {dishy}
+//                </div>
+//                <div className="row">
+//                  <div  className="col-12 col-md-5 m-1">
+//                    {this.renderDish(this.state.selectedDish)}
+//                  </div>
+//                </div>
+//            </div>
+//        );
+//        }
     }
 
-export default Dishy;
+export default Dishdetail;

@@ -3,7 +3,6 @@ import './App.css';
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './components/MenuComponent';
-import Dishy from './components/DishdetailsComponent';
 import { DISHES } from './shared/dishes';
 
 class App extends Component {
@@ -25,7 +24,6 @@ class App extends Component {
           </div>
             </Navbar>
           <Menu dishes={this.state.dishes} />
-          <Dishy dishes={this.state.dishes} />
         </div>
       );
     }
