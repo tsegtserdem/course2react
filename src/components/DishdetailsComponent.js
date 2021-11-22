@@ -37,10 +37,9 @@ class Dishdetail extends Component {
             </div>
             </React.Fragment>
             )
-        }
-        else{
+        } else {
             return(<div></div>)
-        }
+        };
     }
 
     renderComments =(comments) =>
@@ -48,12 +47,12 @@ class Dishdetail extends Component {
 
         if (comments!=null)
         {
-            const com = comments.map(co=>{
+            const com = comments.map((comments)=>{
 
                     return(
                     <React.Fragment>
-                    <li>{co.comment}</li><br />
-                    <li>-- {co.author}, {this.formatDate(co.date)}</li><br />
+                    <li>{comments.comment}</li><br />
+                    <li>-- {comments.author}, {comments.date}</li><br />
                     </React.Fragment>
                 )
 
@@ -70,16 +69,6 @@ class Dishdetail extends Component {
         }
     }
 
-    formatDate(date)
-{
-    const option = {year: 'numeric', month: 'short', day: 'numeric' };
-    const date1 = new Date(date)
-    const newdate = date1.toLocaleDateString("en-US", option)
-    return newdate;
-
-}
-}
-
-
+    }
 
 export default Dishdetail;

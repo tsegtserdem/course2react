@@ -150,7 +150,7 @@ export const DISHES =
             id: 0,
             rating: 5,
             comment: "Imagine all the eatables, living in conFusion!",
-            author: "John Lemon",
+            author: "John Lemons",
             date: "2012-01-16T17:57:28.556094Z"
             },
             {
