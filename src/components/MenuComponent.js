@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 import Dishdetail from './DishdetailsComponent';
-import { DISHES } from '../shared/dishes';
 
 class Menu extends Component {
     constructor(props) {
@@ -13,9 +12,6 @@ class Menu extends Component {
         console.log('Menu Component constructor is invoked');
     }
     
-    componentDidMount(){
-        console.log('Menu Component constructorDidMount is invoked');
-    }
     onDishSelect(dish) {
         this.setState({ selectedDish: dish});    }
         
