@@ -4,13 +4,24 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 class Dishdetail extends Component {
 
+    componentDidMount(){
+        console.log("Dishdetail component componentDidMount invoked")
+    }
+    
+    componentDidUpdate(){
+        console.log("Dishdetail component componentDidUpdate invoked")
+    }
+    
     render() { 
+        console.log("Dishdetail component render invoked")
         const {dish} = this.props;
         return ( 
-            <div className="row">
+            <div class="container">
+            <div class="row">
 
             {this.renderDish(dish)}
 
+            </div>
             </div>
         );
     }
@@ -52,7 +63,7 @@ class Dishdetail extends Component {
                     return(
                     <React.Fragment>
                     <li>{comments.comment}</li><br />
-                    <li>-- {comments.author}, {comments.date}</li><br />
+                    <li>-- {comments.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comments.date)))}</li><br />
                     </React.Fragment>
                 )
 
