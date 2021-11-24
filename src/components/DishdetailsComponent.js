@@ -2,7 +2,33 @@ import React, { Component } from 'react';
 import {Card,CardImg,CardText,CardTitle,CardBody} from "reactstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 
-function RenderDish(dish){
+class Dishdetail extends Component {
+
+    componentDidMount(){
+        console.log("Dishdetail component componentDidMount invoked")
+    }
+    
+    componentDidUpdate(){
+        console.log("Dishdetail component componentDidUpdate invoked")
+    }
+    
+    render() { 
+        console.log("Dishdetail component render invoked")
+        const {dish} = this.props;
+        return ( 
+            <div class="container">
+            <div class="row">
+
+            {this.renderDish(dish)}
+
+            </div>
+            </div>
+        );
+    }
+
+
+    renderDish=(dish)=>
+    {
         if (dish!=null)
         {
             return(
@@ -27,7 +53,8 @@ function RenderDish(dish){
         };
     }
 
-    function RenderComments(comments) {
+    renderComments =(comments) =>
+    {
 
         if (comments!=null)
         {
@@ -52,18 +79,7 @@ function RenderDish(dish){
             return(<div></div>)
         }
     }
-    const Dishdetail= (props) => {
-        console.log("Dishdetail component render invoked")
-        const {dish} = this.props;
-        return ( 
-            <div class="container">
-            <div class="row">
 
-            {this.renderDish(dish)}
-
-            </div>
-            </div>
-        );
     }
 
 export default Dishdetail;
