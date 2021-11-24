@@ -1,34 +1,8 @@
-import React, { Component } from 'react';
-import {Card,CardImg,CardText,CardTitle,CardBody} from "reactstrap"
-import "bootstrap/dist/css/bootstrap.min.css"
+import React from 'react';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
-class Dishdetail extends Component {
-
-    componentDidMount(){
-        console.log("Dishdetail component componentDidMount invoked")
-    }
-    
-    componentDidUpdate(){
-        console.log("Dishdetail component componentDidUpdate invoked")
-    }
-    
-    render() { 
-        console.log("Dishdetail component render invoked")
-        const {dish} = this.props;
-        return ( 
-            <div class="container">
-            <div class="row">
-
-            {this.renderDish(dish)}
-
-            </div>
-            </div>
-        );
-    }
-
-
-    renderDish=(dish)=>
-    {
+    function RenderDish({dish}) {
+        
         if (dish!=null)
         {
             return(
@@ -48,13 +22,10 @@ class Dishdetail extends Component {
             </div>
             </React.Fragment>
             )
-        } else {
-            return(<div></div>)
-        };
+        } else return(<div></div>)
     }
 
-    renderComments =(comments) =>
-    {
+    function RenderComments({comments}) {
 
         if (comments!=null)
         {
@@ -75,11 +46,21 @@ class Dishdetail extends Component {
                 </ul>
             )
         }
-        else{
-            return(<div></div>)
-        }
+        else return(<div></div>)
     }
+                    
+    const  Dishdetail = (props) => {
+        console.log("Dishdetail component render invoked")
+        const {dish} = this.props;
+        return ( 
+            <div class="container">
+            <div class="row">
 
+            {this.renderDish(dish)}
+
+            </div>
+            </div>
+        );
     }
 
 export default Dishdetail;
