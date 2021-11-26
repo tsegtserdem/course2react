@@ -1,11 +1,6 @@
 import React from 'react';
 import { Card, CardImg, CardTitle, CardBody, CardText } from 'reactstrap';
 
-
-
-
-
-    
     function RenderComments({dish})  {
         console.log("qwerty",dish)
         const {comments}= dish
