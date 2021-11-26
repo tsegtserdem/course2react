@@ -7,18 +7,16 @@ function About(props) {
     const leaders = props.leaders.map((leader) => {
         return (
             <React.Fragment>
-                <div className="col-12 mt-5">
                     <Media tag="li">
                         <Media left middle>
                             <Media object src={leader.image} alt={leader.name} />
                         </Media>
                         <Media body className="ml-5">
-                        <Media heading>{leader.name}</Media>
-                        <p>{leader.designation}</p>
-                        <p>{leader.description}</p>
+                            <Media heading>{leader.name}</Media>
+                            <p>{leader.designation}</p>
+                            <p>{leader.description}</p>
                         </Media>
                     </Media>
-                </div>
             </React.Fragment>
         );
     });
@@ -77,10 +75,8 @@ function About(props) {
                 <div className="col-12">
                     <h2>Corporate Leadership</h2>
                 </div>
-                <div className="col-12">
-                    <Media list>
+                <div className="col-12 mt-5">
                         {leaders}
-                    </Media>
                 </div>
             </div>
         </div>
