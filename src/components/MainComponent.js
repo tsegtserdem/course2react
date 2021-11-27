@@ -8,10 +8,21 @@ import About from './AboutComponent';
 import Contact from './ContactComponent'
 import Dishdetail from './DishdetailsComponent';
 import { DISHES } from '../shared/dishes';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
+
+
+    const mapStateToProps = state => {
+      return {
+        dishes: state.dishes,
+        comments: state.comments,
+        promotions: state.promotions,
+        leaders: state.leaders
+      }
+    }
 
 class Main extends Component {
     
@@ -65,4 +76,5 @@ class Main extends Component {
     }
     }
 
-export default Main;
+//export default Main;
+export default withRouter(connect(mapStateToProps)(Main));
