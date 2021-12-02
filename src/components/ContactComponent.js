@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, Row, Col, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, Form, Errors, actions } from 'react-redux-form';
+import { baseUrl } from '../shared/baseUrl';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -28,9 +29,10 @@ constructor(props) {
     handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
         alert('Current State is: ' + JSON.stringify(values));
-        this.props.resetFeedbackForm();
+        this.props.postFeeds(this.props.feedId, values.firstname, values.lastname, values.telnum, values.email, values.contactType, values.feedback, values.id);
         // event.preventDefault();
     }
+    
 
   render() {
     return(
