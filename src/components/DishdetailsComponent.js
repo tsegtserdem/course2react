@@ -135,7 +135,7 @@ const minLength = (len) => (val) => val && (val.length >= len);
 
         handleSubmit(values) {
             this.toggleModal();
-            console.log('Current State is: ' + JSON.stringify(values));
+            console.log('Current COMMENT STATE is: ' + JSON.stringify(values));
             this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
         }
 
@@ -163,9 +163,9 @@ const minLength = (len) => (val) => val && (val.length >= len);
                                 </Row>
 
                                 <Row className="form-group">
-                                    <Label htmlFor="yourname" >Your Name</Label>
+                                    <Label htmlFor="author" >Your Name</Label>
 
-                                        <Control.text model=".yourname" id="yourname" name="yourname"
+                                        <Control.text model=".author" id="author" name="author"
                                             placeholder="Your Name"
                                             className="form-control"
                                             validators={{
@@ -174,7 +174,7 @@ const minLength = (len) => (val) => val && (val.length >= len);
                                             />
                                         <Errors
                                             className="text-danger"
-                                            model=".yourname"
+                                            model=".author"
                                             show="touched"
                                             messages={{
                                                 required: 'Required',
